@@ -1,3 +1,4 @@
+import org.junit.jupiter.api.Test;
 import org.openqa.selenium.By;
 import org.openqa.selenium.WebDriver;
 import org.openqa.selenium.chrome.ChromeDriver;
@@ -5,7 +6,14 @@ import org.junit.jupiter.api.Assertions;
 
 public class ShoppingTest
 {
-    public static void main(String[] args) {
+   // public static void main(String[] args) {
+
+    // @Test tells JUnit that this method is a test case.
+    // JUnit Test Runner discovers @Test methods and executes them.
+    // No main() method is required because JUnit controls test execution.
+
+    @Test
+           public void shoppingTest(){
         WebDriver driver = new ChromeDriver();
         driver.get("https://www.saucedemo.com");
         driver.findElement(By.id("user-name")).sendKeys("standard_user");
