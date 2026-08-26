@@ -56,5 +56,6 @@ Assertions.assertEquals("Sauce Labs Bike Light", product2);
     @AfterEach
     void teardown(){
          driver.quit();
+
     }
 }
