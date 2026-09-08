@@ -82,3 +82,45 @@ Verify product 1 + product 2 with assertions
 Close Chrome
 ↓
 PASS
+
+
+
+Next step
+expectedProduct1
+↓
+"Sauce Labs Backpack"
+
+product1
+↓
+actual text from webpage
+
+assertEquals(expectedProduct1, product1)
+
+FLow:
+@BeforeEach
+↓
+Create ChromeDriver
+↓
+Create WebDriverWait
+↓
+Open SauceDemo
+↓
+Login
+↓
+Wait for Login → click
+↓
+Add products
+↓
+Wait for Cart → click
+↓
+Wait for Backpack → read text
+↓
+Wait for Bike Light → read text
+↓
+Compare expected vs actual
+↓
+@AfterEach
+↓
+Close Chrome
+↓
+PASS

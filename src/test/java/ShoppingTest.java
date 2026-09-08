@@ -60,14 +60,18 @@ public class ShoppingTest
         driver.findElement(By.id("add-to-cart-sauce-labs-bike-light")).click();
         wait.until(ExpectedConditions.elementToBeClickable(By.className("shopping_cart_link"))).click();
 
+        //expected arguments for assertion method
+        String expectedProduct1 = "Sauce Labs Backpack";
+        String expectedProduct2 = "Sauce Labs Bike Light";
+
         String product1= wait.until(ExpectedConditions.elementToBeClickable(By.id("item_4_title_link"))).getText();
         System.out.println(product1);
 
         String product2= wait.until(ExpectedConditions.elementToBeClickable(By.id("item_0_title_link"))).getText();
         System.out.println(product2);
 
-Assertions.assertEquals("Sauce Labs Backpack", product1);
-Assertions.assertEquals("Sauce Labs Bike Light", product2);
+Assertions.assertEquals(expectedProduct1, product1);
+Assertions.assertEquals(expectedProduct2, product2);
     }
 
     @AfterEach
