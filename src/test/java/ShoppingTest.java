@@ -5,7 +5,6 @@ import org.openqa.selenium.By;
 import org.openqa.selenium.WebDriver;
 import org.openqa.selenium.chrome.ChromeDriver;
 import org.junit.jupiter.api.Assertions;
-import org.openqa.selenium.support.ui.ExpectedCondition;
 import org.openqa.selenium.support.ui.ExpectedConditions;
 import org.openqa.selenium.support.ui.WebDriverWait;
 import java.time.Duration;
@@ -25,6 +24,10 @@ public class ShoppingTest
     // This makes the test easier to maintain and allows the same values to be reused.
     String username = "standard_user";
     String password = "secret_sauce";
+
+    //expected arguments for assertion method
+    String expectedProduct1 = "Sauce abs Backpack";
+    String expectedProduct2 = "Sauce Labs Bike Light";
 
     @BeforeEach
     void setup(){
@@ -60,9 +63,7 @@ public class ShoppingTest
         driver.findElement(By.id("add-to-cart-sauce-labs-bike-light")).click();
         wait.until(ExpectedConditions.elementToBeClickable(By.className("shopping_cart_link"))).click();
 
-        //expected arguments for assertion method
-        String expectedProduct1 = "Sauce Labs Backpack";
-        String expectedProduct2 = "Sauce Labs Bike Light";
+
 
         String product1= wait.until(ExpectedConditions.elementToBeClickable(By.id("item_4_title_link"))).getText();
         System.out.println(product1);
@@ -70,8 +71,8 @@ public class ShoppingTest
         String product2= wait.until(ExpectedConditions.elementToBeClickable(By.id("item_0_title_link"))).getText();
         System.out.println(product2);
 
-Assertions.assertEquals(expectedProduct1, product1);
-Assertions.assertEquals(expectedProduct2, product2);
+Assertions.assertEquals(expectedProduct1, product1, "Backpack product name does not match"); // message if it fails
+Assertions.assertEquals(expectedProduct2, product2, "Bike Light product name does not match");
     }
 
     @AfterEach

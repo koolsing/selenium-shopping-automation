@@ -124,3 +124,33 @@ Compare expected vs actual
 Close Chrome
 ↓
 PASS
+
+
+Next step
+@BeforeEach
+↓
+Create ChromeDriver
+↓
+Create WebDriverWait
+↓
+@Test
+↓
+Test data
+↓
+Open SauceDemo
+↓
+Login
+↓
+Add products
+↓
+Wait for Cart → click
+↓
+Wait for products → read text
+↓
+Assert expected vs actual + failure message
+↓
+@AfterEach
+↓
+Close Chrome
+↓
+PASS
