@@ -79,7 +79,10 @@ public class ShoppingTest
         productPage.addBackpack();
 
         productPage.addBikeLight();
+
+        CartPage cartPage = new CartPage(driver,wait);
         wait.until(ExpectedConditions.elementToBeClickable(By.className("shopping_cart_link"))).click();
+
 
         String product1= wait.until(ExpectedConditions.elementToBeClickable(By.id("item_4_title_link"))).getText();
         System.out.println(product1);

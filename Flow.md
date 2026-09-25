@@ -376,4 +376,46 @@ Verify products
 ↓
 Close browser
 -----------------------------------------
+Next
+ShoppingTest
+|
+├── LoginPage
+|      └── login()
+|
+├── ProductPage
+|      ├── addBackpack()
+|      └── addBikeLight()
+|
+└── CartPage
+└── constructor
 
+Next
+@BeforeEach
+↓
+ChromeDriver
+↓
+WebDriverWait
+↓
+Open SauceDemo
+↓
+LoginPage
+↓
+login()
+↓
+ProductPage
+↓
+addBackpack()
+↓
+addBikeLight()
+↓
+CartPage
+↓
+open cart        ← still directly in ShoppingTest
+↓
+verify products  ← still directly in ShoppingTest
+↓
+@AfterEach
+↓
+quit browser
+
+--------------
