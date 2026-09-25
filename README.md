@@ -101,7 +101,7 @@ selenium-shopping-automation
 └── src
     └── test
         └── java
-            └── ShoppingTest.java
+            └── shopping.pages.ShoppingTest.java
 ```
 
 ### `pom.xml`
@@ -110,7 +110,7 @@ The `pom.xml` file is the Maven configuration file.
 
 It contains the external libraries required by the project, including Selenium and JUnit.
 
-### `ShoppingTest.java`
+### `shopping.pages.ShoppingTest.java`
 
 This class contains the Selenium automation code.
 
@@ -365,7 +365,7 @@ Install:
 1. Clone the repository.
 2. Open the project in IntelliJ IDEA.
 3. Allow Maven to download the project dependencies.
-4. Open `ShoppingTest.java`.
+4. Open `shopping.pages.ShoppingTest.java`.
 5. Run the Java program.
 6. Chrome will open automatically.
 7. Selenium will perform the shopping workflow.
