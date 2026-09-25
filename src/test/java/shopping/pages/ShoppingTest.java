@@ -69,14 +69,16 @@ public class ShoppingTest
 
         loginPage.login(username, password);
 
+        ProductPage productPage = new ProductPage(driver,wait);
+
 
 // - Return type: WebElement — a reference to the located DOM element, on which you can call methods like .sendKeys(), .click(), .getText(), etc.
 //  - Parameter: By (package org.openqa.selenium) — a locator strategy like By.id(...), By.xpath(...), By.cssSelector(...).
 //  So in driver.findElement(By.id("user-name")), driver is typed as WebDriver, and it inherits findElement from SearchContext.
 
-        //Wait until it is clickable
-      wait.until(ExpectedConditions.elementToBeClickable(By.id("add-to-cart-sauce-labs-backpack"))).click();
-        driver.findElement(By.id("add-to-cart-sauce-labs-bike-light")).click();
+        productPage.addBackpack();
+
+        productPage.addBikeLight();
         wait.until(ExpectedConditions.elementToBeClickable(By.className("shopping_cart_link"))).click();
 
         String product1= wait.until(ExpectedConditions.elementToBeClickable(By.id("item_4_title_link"))).getText();

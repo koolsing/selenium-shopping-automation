@@ -309,3 +309,71 @@ Open Cart
 Verify products
 ↓
 Close browser
+
+First, we created a single class ShoppingTest to mimic the flow.
+Now, we are breaking it into different pages, such as Login, Product, etc.
+
+Next
+ShoppingTest
+↓
+Open SauceDemo
+↓
+Create LoginPage object
+↓
+loginPage.login(...)
+↓
+Create ProductPage object
+↓
+ProductPage.addBackpack()
+↓
+[Next: move Bike Light]
+↓
+Cart
+↓
+Assertions
+↓
+Close browser
+---------------------------------------
+Next
+Before:
+ShoppingTest
+↓
+Knows Backpack's locator
+↓
+Knows how to wait
+↓
+Clicks Backpack
+
+Now
+ShoppingTest
+↓
+productPage.addBackpack()
+↓
+ProductPage
+↓
+Knows locator
+↓
+Knows how to wait
+↓
+Clicks Backpack
+---------------------------------------
+Next
+ShoppingTest
+↓
+LoginPage
+↓
+login()
+↓
+ProductPage
+↓
+addBackpack()
+↓
+addBikeLight()
+↓
+Cart
+↓
+Verify products
+↓
+Close browser
+-----------------------------------------
+
