@@ -22,6 +22,6 @@ public class ProductPage {
     }
 
     public void addBikeLight(){
-        driver.findElement(By.id("add-to-cart-sauce-labs-bike-light")).click();
+        wait.until(ExpectedConditions.elementToBeClickable(By.id("add-to-cart-sauce-labs-bike-light"))).click();
     }
 }
