@@ -2,6 +2,7 @@ package shopping.pages;
 
 import org.openqa.selenium.By;
 import org.openqa.selenium.WebDriver;
+import org.openqa.selenium.support.ui.ExpectedConditions;
 import org.openqa.selenium.support.ui.WebDriverWait;
 
 
@@ -22,6 +23,6 @@ public class LoginPage {
     public void login(String username, String password){
         driver.findElement(By.id("user-name")).sendKeys(username);
         driver.findElement(By.id("password")).sendKeys(password);
-        driver.findElement(By.id("login-button")).click();
+      wait.until(ExpectedConditions.elementToBeClickable(By.id("login-button"))).click();
     }
 }

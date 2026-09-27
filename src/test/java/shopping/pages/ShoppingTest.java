@@ -85,6 +85,7 @@ public class ShoppingTest
        String product1= cartPage.getBackPackName();
        String product2= cartPage.getBikeLightName();
 
+       //Assertions remain in main test class.
 Assertions.assertEquals(expectedProduct1, product1, "Backpack product name does not match"); // message if it fails
 Assertions.assertEquals(expectedProduct2, product2, "Bike Light product name does not match");
     }

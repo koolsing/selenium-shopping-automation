@@ -500,15 +500,22 @@ ShoppingTest assertion
 ------------------------------------------------------
 Current flow
 ------------------------------------------------------
+
 ShoppingTest
 ↓
 LoginPage.login()
+├── enter username
+├── enter password
+└── wait until login button clickable → click()
 ↓
 ProductPage.addBackpack()
+└── wait until clickable → click()
 ↓
 ProductPage.addBikeLight()
+└── click()
 ↓
 CartPage.openCart()
+└── wait until clickable → click()
 ↓
 CartPage.getBackpackName()
 └── wait until visible → getText()
@@ -519,3 +526,5 @@ CartPage.getBikeLightName()
 JUnit assertions
 ↓
 quit()
+
+
