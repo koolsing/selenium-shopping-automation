@@ -4,10 +4,8 @@ import org.junit.jupiter.api.AfterEach;
 import org.junit.jupiter.api.BeforeEach;
 import org.junit.jupiter.api.Test;
 import org.junit.jupiter.api.Assertions;
-import org.openqa.selenium.By;
 import org.openqa.selenium.WebDriver;
 import org.openqa.selenium.chrome.ChromeDriver;
-import org.openqa.selenium.support.ui.ExpectedConditions;
 import org.openqa.selenium.support.ui.WebDriverWait;
 import java.time.Duration;
 
@@ -81,14 +79,11 @@ public class ShoppingTest
         productPage.addBikeLight();
 
         CartPage cartPage = new CartPage(driver,wait);
-        wait.until(ExpectedConditions.elementToBeClickable(By.className("shopping_cart_link"))).click();
 
+        cartPage.openCart();
 
-        String product1= wait.until(ExpectedConditions.elementToBeClickable(By.id("item_4_title_link"))).getText();
-        System.out.println(product1);
-
-        String product2= wait.until(ExpectedConditions.elementToBeClickable(By.id("item_0_title_link"))).getText();
-        System.out.println(product2);
+       String product1= cartPage.getBackPackName();
+       String product2= cartPage.getBikeLightName();
 
 Assertions.assertEquals(expectedProduct1, product1, "Backpack product name does not match"); // message if it fails
 Assertions.assertEquals(expectedProduct2, product2, "Bike Light product name does not match");

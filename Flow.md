@@ -419,3 +419,103 @@ verify products  ← still directly in ShoppingTest
 quit browser
 
 --------------
+Next
+ShoppingTest
+↓
+CartPage object
+↓
+openCart()
+↓
+Cart locator + Selenium click
+
+Flow:
+ShoppingTest
+↓
+LoginPage
+└── login()
+↓
+ProductPage
+├── addBackpack()
+└── addBikeLight()
+↓
+CartPage
+└── openCart()
+↓
+Read product names
+↓
+Assertions
+↓
+quit browser
+--------------
+Next
+ShoppingTest
+↓
+CartPage object
+↓
+getBackpackName()
+↓
+Selenium finds Backpack
+↓
+getText()
+↓
+String returned to ShoppingTest
+-----------------------
+
+Next
+CartPage
+↓
+finds and reads webpage data
+↓
+returns String
+
+ShoppingTest
+↓
+receives String
+↓
+decides whether String is correct
+↓
+JUnit assertion
+-----------------------
+
+Bug:
+Changed String product1= wait.until(ExpectedConditions.elementToBeClickable(By.id("item_4_title_link"))).getText();
+to
+String product1= wait.until(ExpectedConditions.visibilityOfElementLocated(By.id("item_4_title_link"))).getText();
+
+Next
+CartPage
+↓
+openCart()
+↓
+getBackpackName()
+↓
+wait for Backpack to be VISIBLE
+↓
+getText()
+↓
+return String
+↓
+ShoppingTest assertion
+
+------------------------------------------------------
+Current flow
+------------------------------------------------------
+ShoppingTest
+↓
+LoginPage.login()
+↓
+ProductPage.addBackpack()
+↓
+ProductPage.addBikeLight()
+↓
+CartPage.openCart()
+↓
+CartPage.getBackpackName()
+└── wait until visible → getText()
+↓
+CartPage.getBikeLightName()
+└── wait until visible → getText()
+↓
+JUnit assertions
+↓
+quit()
