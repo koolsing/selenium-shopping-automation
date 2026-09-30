@@ -19,8 +19,6 @@ public class ShoppingTest
     WebDriver driver;
     WebDriverWait wait;
 
-
-
     // Imagine you have 20 tests. You don't want usernames and passwords scattered throughout your code.
     // Store test data in variables instead of hardcoding values directly inside Selenium actions.
     // This makes the test easier to maintain and allows the same values to be reused.
